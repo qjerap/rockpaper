@@ -1,0 +1,272 @@
+/*@@@@@@ ICONS @@@@@@*/
+
+.icon-outer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: max-content;
+    height: 6.5em;
+    width: 6.5em;
+    border-radius: 50%;
+    border-bottom: rgba(0, 0, 0, 0.35) 0.2em solid;
+}
+
+.icon-inner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    width: max-content;
+    height: 5em;
+    width: 5em;
+    border-radius: 50%;
+    border-top: 0.35em solid rgba(0, 0, 0, 0.21);
+}
+
+.icon-inner img {
+    width: 3em;
+}
+
+.rock {
+    background-image: linear-gradient( to bottom, hsl(349, 71%, 52%), hsl(349, 70%, 56%));
+}
+
+.paper {
+    background-image: linear-gradient( to bottom, hsl(230, 89%, 62%), hsl(230, 89%, 65%));
+}
+
+.scissors {
+    background-image: linear-gradient( to bottom, hsl(39, 89%, 49%), hsl(40, 84%, 53%));
+}
+
+.pending {
+    background-color: gainsboro;
+}
+
+
+/* @@@@@@@@@@@@@@@@@@@@@@@ */
+
+.picks {
+    flex-grow: 3;
+    display: flex;
+    /* display: none; */
+    align-items: center;
+    position: relative;
+}
+
+.background-triangle {
+    position: absolute;
+    top: 3%;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+.background-triangle .triangle {
+    position: relative;
+    width: 13em;
+}
+
+.bottom {
+    position: absolute;
+    bottom: 0em;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+}
+
+.top-left {
+    position: absolute;
+    top: -2.5em;
+    left: -2em;
+}
+
+.top-right {
+    position: absolute;
+    top: -2.5em;
+    right: -2em;
+}
+
+
+/*################### RESULT ##################*/
+
+.result {
+    flex-grow: 3;
+    display: grid;
+    display: none;
+    width: 50%;
+    position: relative;
+    justify-content: center;
+    align-items: start;
+    grid-template-columns: repeat(3, minmax(250px, 1fr));
+}
+
+@media (max-width: 900px) {
+    .result {
+        grid-template-columns: 1fr 1fr;
+        width: 95%;
+    }
+    .showWinner {
+        position: absolute;
+        top: 30%;
+        left: 0;
+        right: 0;
+    }
+}
+
+.result h3 {
+    color: #fff;
+    font-size: 0.8em;
+    font-weight: 500;
+    letter-spacing: 2px;
+    margin-bottom: 3rem;
+}
+
+.player,
+.computer,
+.showWinner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.pick-bg {
+    background-color: rgba(17, 12, 54, 0.2);
+    width: max-content;
+    height: 6.5em;
+    width: 6.5em;
+    border-radius: 50%;
+}
+
+.showWinner {
+    visibility: hidden;
+    margin-top: 4.5em;
+}
+
+.showWinner h3 {
+    font-size: 1.5em;
+    margin: .5rem;
+}
+
+.showWinner button {
+    cursor: pointer;
+    border-radius: .25rem;
+    border: none;
+    padding: .5rem 2rem;
+    font-size: .6em;
+}
+
+.showWinner button:focus {
+    outline: none;
+}
+
+
+/* ANIMATIONS */
+
+.hover-animation:hover {
+    cursor: pointer;
+    animation: rotate3d 0.5s forwards;
+    transition: ease-out;
+}
+
+.slideout {
+    animation: slideout 0.5s ease-in-out;
+}
+
+.slidein {
+    animation: slideout 0.5s;
+    animation-direction: reverse;
+}
+
+.pop-slide-in {
+    animation: forwards pop-slide-in 0.2s ease-in;
+    animation-delay: 1s;
+}
+
+.pop-in {
+    animation: 0.5s pop-in;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+}
+
+.rotate {
+    animation: forwards rotate 1s;
+}
+
+.rotate2 {
+    animation: rotate 1s;
+    animation-direction: reverse;
+}
+
+.winner {
+    animation: glow 1s;
+}
+
+@keyframes glow {
+    0% {}
+    50% {
+        box-shadow: 0px 0px 95px -6px rgba(250, 250, 250, 0.25);
+    }
+    100% {}
+}
+
+@keyframes slideout {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(10rem);
+    }
+}
+
+@keyframes pop-slide-in {
+    0% {
+        transform: scale(0.5) rotateX(180deg);
+        opacity: 0;
+    }
+    80% {
+        transform: scale(1.5);
+    }
+    100% {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+@keyframes pop-in {
+    0% {
+        transform: scale(0.5) rotateX(180deg);
+        opacity: 0;
+    }
+    80% {
+        transform: scale(1.5);
+    }
+    100% {
+        transform: scale(1) rotate(0);
+        opacity: 1;
+    }
+}
+
+@keyframes rotate {
+    0% {}
+    90% {
+        transform: rotateX(360deg);
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes rotate3d {
+    0% {
+        transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+    }
+    50% {
+        transform: rotateX(-24deg) rotateY(14deg) rotateZ(0deg) scale(0.96);
+    }
+    100% {
+        transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1.05);
+    }
+}

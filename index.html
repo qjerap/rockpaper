@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/fav.png" />
+    <link rel="stylesheet" href="index.css">
+
+    <title>Rock, Paper, Scissors</title>
+
+    </style>
+</head>
+
+
+<body>
+
+    <div class="header-container">
+
+        <div class="header">
+            <div class="header--title">
+                <img src="/images/logo.svg" alt="" srcset="">
+            </div>
+            <div class="header--score">
+                <h3 class="score--title">score</h3>
+                <h1 class="score--number" id="score">0</h1>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div class="picks" id="picks">
+
+        <div class="background-triangle">
+            <img src="/images/bg-triangle.svg" alt="" class="triangle">
+
+            <div class="icon-outer rock bottom hover-animation" id="rock">
+                <div class="icon-inner">
+                    <img src="images/icon-rock.svg" alt="">
+                </div>
+            </div>
+
+
+            <div class="icon-outer paper top-left hover-animation" id="paper">
+                <div class="icon-inner">
+                    <img src="images/icon-paper.svg" alt="">
+                </div>
+            </div>
+
+
+            <div class="icon-outer scissors top-right hover-animation" id="scissors">
+                <div class="icon-inner">
+                    <img src="images/icon-scissors.svg" alt="">
+                </div>
+            </div>
+
+            </img>
+        </div>
+
+    </div>
+
+    <div class="result" id="result">
+        <div class="player">
+            <h3>YOU PICKED</h3>
+            <div id="playerPicked">
+                <div class="pick-bg"></div>
+            </div>
+        </div>
+        <div class="showWinner" id="show-winner">
+            <h3 id="result-message">.</h3>
+            <button class="hover-animation" id="play-again">PLAY AGAIN</button>
+        </div>
+        <div class="computer">
+            <h3>THE HOUSE PICKED</h3>
+            <div id="computerPicked">
+                <div class="pick-bg"></div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+    <div class="rules-btn" id="rules-btn">
+        <h2>rules</h2>
+    </div>
+
+    <div class="rules" id="rules">
+        <div class="rules-container">
+            <img src="/images/image-rules.svg" alt="">
+            <h1 class="rules-title">RULES</h1>
+            <button class="rules-close" id="rules-btn-close">X</button>
+        </div>
+
+    </div>
+    <script src="index.js"></script>
+</body>
+
+</html>
